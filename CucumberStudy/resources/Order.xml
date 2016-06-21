@@ -1,0 +1,29 @@
+<Order>
+	<OrderNumber>8783764731</OrderNumber>
+	<OrderDate>2016-05-06T16:53:19</OrderDate>
+	<OrderType>Ordem de troca de plano</OrderType>
+	<ListOfOrderLineItems>
+		<OrderLineItem>
+			<PhoneNumber>11977845210</PhoneNumber>
+			<ActionCode>-</ActionCode>
+			<ProductCategory>LINHA</ProductCategory>
+			<ProductType>DADOS_MOVEL</ProductType>
+		</OrderLineItem>
+		<OrderLineItem>
+			<ActionCode>Excluir</ActionCode>
+			<Product>PLANO201</Product>
+			<ProductName>Navegue Mais Web 10GB</ProductName>
+			<ProductCategory>PLANO</ProductCategory>
+			<ProductType>POS_PAGO</ProductType>
+			<ProductSubType>DADOS_MOVEL</ProductSubType>
+		</OrderLineItem>
+		<OrderLineItem>
+			<ActionCode>Incluir</ActionCode>
+			<ProductPartNumber>PLANO301</ProductPartNumber>
+			<ProductName>Navegue por semana 200MB</ProductName>
+			<ProductCategory>PLANO</ProductCategory>
+			<ProductType>PRE_PAGO</ProductType>
+			<ProductSubType>DADOS_MOVEL</ProductSubType>
+		</OrderLineItem>
+	</ListOfOrderLineItems>
+</Order>
