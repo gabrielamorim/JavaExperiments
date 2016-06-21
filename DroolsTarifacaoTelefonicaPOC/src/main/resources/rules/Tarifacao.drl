@@ -1,0 +1,53 @@
+package com.gabrielamorim.drools
+
+import com.gabrielamorim.drools.model.Ligacao;
+import com.gabrielamorim.drools.model.Usuario;
+import java.util.Date;
+
+/**
+* Infinity 10
+*/
+rule "Infinity 10 - ligacao padrao"
+	activation-group "Infinity 10"
+	salience 50
+	when
+		$ligacao : Ligacao ( $cliente : origem, origem.plano == "Infinity 10" )
+	then 
+		System.out.println("Infinity 10 - ligacao padrao");
+		$ligacao.setPreco(2.0 * $ligacao.getDuracao());
+end
+
+rule "Infinity 10 - ligacao excedendo 10 minutos"
+	activation-group "Infinity 10"
+	salience 100
+	when
+		$ligacao : Ligacao( $cliente : origem, duracao > 10, origem.plano == "Infinity 10" )
+	then
+		System.out.println("Infinity 10 - ligacao excedendo 10 minutos");
+		$ligacao.setPreco(20.0);
+end
+
+/**
+ * Infinity FALE MAIS
+ */
+rule "Infinity fale mais - ligacao padrao"
+	activation-group "Infinity fale mais"
+	salience 50
+	when
+		$ligacao : Ligacao( $cliente : origem, origem.plano == "Infinity FALE MAIS" )
+	then
+		System.out.println("Infinity FALE MAIS - ligacao padrao");
+		$ligacao.setPreco(1.5 * $ligacao.getDuracao());
+end
+
+rule "Infinity fale mais - ligacao para TIM com desconto"
+	activation-group "Infinity fale mais"
+	salience 100
+	when
+		$ligacao : Ligacao( $cliente : origem, destino.operadora == "TIM", origem.plano == "Infinity FALE MAIS" ) 
+		$total : Number( longValue < 60 )     
+		from accumulate( Ligacao( $d : duracao , destino.operadora == "TIM" ) from $cliente.ligacoes, sum( $d ) )
+	then
+		System.out.println("Infinity FALE MAIS - ligacao para TIM com desconto");
+		$ligacao.setPreco(0.01 * $ligacao.getDuracao());		
+end
