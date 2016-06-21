@@ -1,4 +1,4 @@
-package order;
+package com.gabrielamorim.order;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
