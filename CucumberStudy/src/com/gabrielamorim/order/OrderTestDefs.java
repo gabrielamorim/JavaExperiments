@@ -41,7 +41,7 @@ public class OrderTestDefs {
 	XPath xpath;
 	
 	/**
-	 * Inicializa objetos e componentes necessários nos steps dos testes.
+	 * Inicializa objetos e componentes necessï¿½rios nos steps dos testes.
 	 * 
 	 * @throws ParserConfigurationException
 	 */
@@ -54,9 +54,9 @@ public class OrderTestDefs {
 	}
 	
 	/**
-	 * De acordo com o cenário cria um {@link OrderItem}
+	 * De acordo com o cenï¿½rio cria um {@link OrderItem}
 	 * e o adiciona a uma lista para auxiliar nas
-	 * validações dos próximos steps.
+	 * validaï¿½ï¿½es dos prï¿½ximos steps.
 	 * 
 	 * @param productCategory
 	 * @param productType
@@ -71,8 +71,8 @@ public class OrderTestDefs {
 	 * Valida o payload da ordem de acordo com
 	 * a lista de {@link OrderItem}. 
 	 * 
-	 * Recebe como parâmetro o nome do arquivo que
-	 * contém o payload da ordem.
+	 * Recebe como parï¿½metro o nome do arquivo que
+	 * contï¿½m o payload da ordem.
 	 * 
 	 * @param orderFileName
 	 * @throws ParserConfigurationException
@@ -102,17 +102,4 @@ public class OrderTestDefs {
 	    	assertThat(nodes.getLength() > 0, equalTo(true));	    	
 	    }
 	}
-}
-
-class OrderItem {
-	
-	public OrderItem(String productCategory, String productType, String actionCode) {
-		this.productCategory = productCategory;
-		this.productType = productType;
-		this.actionCode = actionCode;
-	}
-	
-	String productCategory;
-	String productType;
-	String actionCode;
 }
