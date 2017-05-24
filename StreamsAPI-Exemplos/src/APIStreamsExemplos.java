@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+// Classe para testar a API Streams
 public class APIStreamsExemplos {
 
 	public static void main(String[] args) {
